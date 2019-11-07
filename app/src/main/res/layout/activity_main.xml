@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".MainActivity"
+  android:layout_gravity="center">
+
+  <TextView
+    android:id="@+id/title"
+    android:text="Temperature Converter"
+    android:textSize="32sp"
+    android:textAlignment="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/fahrenheit"/>
+
+<!--  <com.google.android.material.textfield.TextInputEditLayout-->
+<!--    android:id="@+id/Temperature"-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    app:hintAnimationEnabled="true"-->
+<!--    app:hintEnabled="true"-->
+<!--    app:layout_constraintStart_toStartOf="parent"-->
+<!--    app:layout_constraintTop_toTopOf="parent">-->
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/fahrenheit"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="numberDecimal"
+      android:hint="Enter Fahrenheit Temp"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toEndOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/celsius"/>
+
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/celsius"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="numberDecimal"
+      android:hint="Enter Celsius Temp"
+      app:layout_constraintTop_toBottomOf="@+id/fahrenheit"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintBottom_toTopOf="@id/kelvin"/>
+
+
+    <com.google.android.material.textfield.TextInputEditText
+      android:id="@+id/kelvin"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="numberDecimal"
+      android:hint="Enter Kelvin Temp"
+      app:layout_constraintTop_toBottomOf="@+id/celsius"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"/>
+
+  <RadioGroup
+    android:id="@+id/fahrenheit_to_others"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/fahrenheit"
+    app:layout_constraintBottom_toTopOf="@+id/celsius"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <RadioButton
+      android:id="@+id/fahrenheit_to_celsius"
+      android:text="Fahrenheit to Celsius"
+      android:textSize="16sp"
+      android:textAlignment="center"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toTopOf="@id/fahrenheit_to_others"
+      app:layout_constraintStart_toStartOf="parent"/>
+
+    <RadioButton
+      android:id="@+id/fahrenheit_to_kelvin"
+      android:text="Fahrenheit to Kelvin"
+      android:textSize="16sp"
+      android:textAlignment="center"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toBottomOf="@id/fahrenheit_to_others"
+      app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+      android:id="@+id/convert_1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:onClick="convert1"
+      android:text="Convert"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/fahrenheit_to_kelvin"/>
+
+  </RadioGroup>
+
+  <RadioGroup
+    android:id="@+id/celsius_to_others"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/celsius"
+    app:layout_constraintBottom_toTopOf="@+id/kelvin"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+  <RadioButton
+    android:id="@+id/celsius_to_fahrenheit"
+    android:text="Celsius to Fahrenheit"
+    android:textSize="16sp"
+    android:textAlignment="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="@id/celsius_to_others"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+  <RadioButton
+    android:id="@+id/celsius_to_kelvin"
+    android:text="Celsius to Kelvin"
+    android:textSize="16sp"
+    android:textAlignment="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="@id/celsius_to_others"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+  <Button
+    android:id="@+id/convert_2"
+    android:text="Convert"
+    android:textSize="16sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/celsius_to_kelvin"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+
+  </RadioGroup>
+
+  <RadioGroup
+    android:id="@+id/kelvin_to_others"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/kelvin"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+  <RadioButton
+    android:id="@+id/kelvin_to_fahrenheit"
+    android:text="Kelvin to Fahrenheit"
+    android:textSize="16sp"
+    android:textAlignment="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="@id/fahrenheit_to_others"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+  <RadioButton
+    android:id="@+id/kelvin_to_celsius"
+    android:text="Convert"
+    android:textSize="16sp"
+    android:textAlignment="center"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="@id/fahrenheit_to_others"
+    app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+      android:id="@+id/convert_3"
+      android:text="Convert"
+      android:textSize="16sp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/kelvin_to_celsius"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"/>
+
+
+  </RadioGroup>
+
+  <!--  </com.google.android.material.textfield.TextInputEditLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
