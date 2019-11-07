@@ -130,15 +130,16 @@
     app:layout_constraintBottom_toBottomOf="@id/celsius_to_others"
     app:layout_constraintStart_toStartOf="parent"/>
 
-  <Button
-    android:id="@+id/convert_2"
-    android:text="Convert"
-    android:textSize="16sp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@id/celsius_to_kelvin"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"/>
+    <Button
+      android:id="@+id/convert_2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:onClick="convert2"
+      android:text="Convert"
+      android:textSize="16sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/celsius_to_kelvin"/>
 
 
   </RadioGroup>
@@ -164,7 +165,7 @@
 
   <RadioButton
     android:id="@+id/kelvin_to_celsius"
-    android:text="Convert"
+    android:text="Kelvin to Celsius"
     android:textSize="16sp"
     android:textAlignment="center"
     android:layout_width="wrap_content"
@@ -174,13 +175,14 @@
 
     <Button
       android:id="@+id/convert_3"
-      android:text="Convert"
-      android:textSize="16sp"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      app:layout_constraintTop_toBottomOf="@id/kelvin_to_celsius"
+      android:onClick="convert3"
+      android:text="Convert"
+      android:textSize="16sp"
       app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent"/>
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/kelvin_to_celsius"/>
 
 
   </RadioGroup>

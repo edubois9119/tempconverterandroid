@@ -38,18 +38,32 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void convert1(View view){
-    double value=new Double(fahrenheit.getText().toString());
+    double value=Double.parseDouble(fahrenheit.getText().toString());
     if(farToCel.isChecked()) {
      value= TempConverter.fahrenheitToCelsius(value);
     }else{
       value= TempConverter.faharenheitToKelvin(value);
     }
-     fahrenheit.setText(new Double(value).toString());
+     fahrenheit.setText(Double.valueOf(value).toString());
   }
 
-  
+  public void convert2(View view){
+    double value=Double.parseDouble(celsius.getText().toString());
+    if(celToFar.isChecked()) {
+      value= TempConverter.celsiusToFahrenheit(value);
+    }else{
+      value= TempConverter.celsiusToKelvin(value);
+    }
+    celsius.setText(Double.valueOf(value).toString());
+  }
 
-
-
-
+  public void convert3(View view){
+    double value=Double.parseDouble(kelvin.getText().toString());
+    if(kelToFar.isChecked()) {
+      value= TempConverter.kelvinToFahrenheit(value);
+    }else{
+      value= TempConverter.kelvinToCelsius(value);
+    }
+    kelvin.setText(Double.valueOf(value).toString());
+  }
 }
